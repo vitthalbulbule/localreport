@@ -1,0 +1,392 @@
+/* styles.css */
+body {
+    
+    padding: 0;
+    margin-top: 0px;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+.Vidio h1{
+    color: white;
+    text-decoration: none;
+    
+}
+@media (max-width: 768px) {
+    .content {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+
+/* Container */
+.container {
+    position: relative;
+    top: 90px;
+    left: 5px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Button Styling */
+.btn {
+    padding: 12px 24px;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Login Button */
+.login {
+    background-color: #007bff;
+    color: white;
+}
+
+.login:hover {
+    background-color: #0056b3;
+}
+
+/* Signup Button */
+.signup {
+    background-color: #28a745;
+    color: white;
+}
+
+.signup:hover {
+    background-color: #1e7e34;
+}
+
+
+
+.background{
+    position: absolute;
+    top: 37%;
+    left: 33%;
+    /* background: url('consulting.png') no-repeat center center/cover; */
+    width: 32%;
+    height: 60vh;
+ }
+
+
+.navbar {
+    position: fixed;
+    background-color:  #feffff;
+padding: 10px 20px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    top: 0;
+    left: 0;
+    
+    z-index: 1000; /* Keep navbar above everything */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    white-space: nowrap;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #6aa4e6;
+    border-radius: 5px;
+}
+
+/* Collapsible Dropdown */
+.collapsible-menu .dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    background-color: rgb(181, 220, 217);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.collapsible-menu .dropdown li {
+    padding: 10px 20px; /* first padding for increase height of submenu and second
+     was for increase width of submenub */
+}
+
+.collapsible-menu .dropdown a {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+}
+
+.collapsible-menu .dropdown a:hover {
+    background-color: #fdfcfca7; /* this color for submenu hovering background*/
+}
+
+/* Show dropdown when button is active */
+.collapsible-menu.active .dropdown {
+    display: block;
+}
+
+
+
+
+/* Caret styling */
+.caret {
+    margin-left: 10px;
+    font-size: 12px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.collapsible-menu.active .caret {
+    transform: rotate(90deg); /* Rotate the caret when active */
+}
+
+
+/* Contact Page Styling */
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+
+
+/*Running text*/
+
+.running-text {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.running-text p {
+    display: inline-block;
+    animation: runningText 13s linear infinite;
+    min-width: 100%; /* Ensures text starts from the right edge */
+}
+
+@keyframes runningText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.horizontal-bar{
+    position: absolute;
+    left: 0;
+    top: 650px;
+    width: 100%;
+    height: 1100px;
+    background: #b6dcdc;
+    padding: 10px 0;
+    z-index: -1;
+}
+.horizontal-bar h1 a{
+    color: black;
+    text-decoration: none;
+}
+.horizontal-bar h1{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: black;
+    font-weight: bold;
+    font-size: 40px;
+    text-decoration: none;
+    position: relative;
+    
+    bottom: 40px;
+}
+.typewriter p {
+    overflow: hidden; /* Ensures text is hidden initially */
+    border-right: 3px solid black; /* Creates the blinking cursor effect */
+    white-space: nowrap; /* Prevents text from wrapping */
+    margin: 0 auto;
+    
+    font-size: 24px;
+    font-family: monospace;
+    width: 0; /* Starts hidden */
+    animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+
+
+    position: relative;
+    bottom: 100px;
+    font-family: 'poppins',sans-serif;
+    font-size: 25px;
+    right: 325px;
+    color: rgb(0, 0, 0);
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent;}
+  }
+
+  
+  .container1 {
+    position: absolute;
+    bottom: 550px;
+    right: 80px;
+    display: flex;
+    justify-content: center; /* Centers the boxes */
+    align-items: flex-start; /* Aligns at the top */
+    gap: 30px; /* Space between boxes */
+    max-width: 1200px; /* Restrict width */
+    margin: 0 auto; /* Center the container */
+    padding: 50px 20px; /* Space from top */
+}
+
+
+.container2 {
+    position: absolute;
+    bottom: 110px;
+    right: 80px;
+    display: flex;
+    justify-content: center; /* Centers the boxes */
+    align-items: flex-start; /* Aligns at the top */
+    gap: 30px; /* Space between boxes */
+    max-width: 1200px; /* Restrict width */
+    margin: 0 auto; /* Center the container */
+    padding: 50px 20px; /* Space from top */
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    width: 410px; /* Square shape */
+    height: 360px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.card h2 {
+    color:black;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    flex-grow: 1;
+}
+
+.card a {
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    padding-top: 20px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    opacity: 1;
+    z-index: -1;
+}
+
+.video-container video {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 25px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+    top: 985px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}

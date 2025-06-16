@@ -1,0 +1,90 @@
+.navbar {
+    position: fixed;
+    background-color:white;
+    padding: 10px 20px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Keep navbar above everything */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    white-space: nowrap;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #0c5cb8;
+    border-radius: 5px;
+}
+
+/* Collapsible Dropdown */
+.collapsible-menu .dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    background-color: rgb(181, 220, 217);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.collapsible-menu .dropdown li {
+    padding: 10px 20px; /* first padding for increase height of submenu and second
+     was for increase width of submenub */
+}
+
+.collapsible-menu .dropdown a {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+}
+
+.collapsible-menu .dropdown a:hover {
+    background-color: #fdfcfca7; /* this color for submenu hovering background*/
+}
+
+/* Show dropdown when button is active */
+.collapsible-menu.active .dropdown {
+    display: block;
+}
+
+/* Caret styling */
+.caret {
+    margin-left: 10px;
+    font-size: 12px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.collapsible-menu.active .caret {
+    transform: rotate(90deg); /* Rotate the caret when active */
+}

@@ -1,0 +1,331 @@
+<?php
+session_start();
+// Include database connection
+include 'includes/db_connect.php';
+// Include header
+include 'includes/header.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ExAm++</title>
+    
+    <!-- Add FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add custom CSS for styling -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .contact-content {
+            padding: 60px 20px;
+            margin-top:40px;
+            text-align: center;
+        }
+        .contact-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #0f0f0f;
+        }
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgb(179, 229, 236);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+        .contact-form:hover {
+        transform: scale(1.05); /* Slightly scale up */
+        box-shadow: 0 0 20px rgba(19, 68, 80, 0.836); /* Increase shadow */
+    
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .contact-form button {
+            background: #2575fc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .contact-form button:hover {
+            background: #1a5bbf;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .contact-card {
+            background: #f1f1f1;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .contact-card .icon {
+            font-size: 40px;
+            color:rgb(8, 8, 8);
+            margin-bottom: 15px;
+        }
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .contact-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+        .map-section {
+            margin-top: 60px;
+            padding: 20px;
+            background: white;
+        }
+        .map-section iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 15px;
+        }
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+
+        /* Navbar Styling */
+        .navbar {
+    position: fixed;
+    background-color:  #feffff;
+padding: 10px 20px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    top: 0;
+    left: 0;
+    
+    z-index: 1000; /* Keep navbar above everything */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    white-space: nowrap;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #6aa4e6;
+    border-radius: 5px;
+}
+
+/* Collapsible Dropdown */
+.collapsible-menu .dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    background-color: rgb(181, 220, 217);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.collapsible-menu .dropdown li {
+    padding: 10px 20px; /* first padding for increase height of submenu and second
+     was for increase width of submenub */
+}
+
+.collapsible-menu .dropdown a {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+}
+
+.collapsible-menu .dropdown a:hover {
+    background-color: #fdfcfca7; /* this color for submenu hovering background*/
+}
+
+/* Show dropdown when button is active */
+.collapsible-menu.active .dropdown {
+    display: block;
+}
+
+
+
+/* Caret styling */
+.caret {
+    margin-left: 10px;
+    font-size: 12px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.collapsible-menu.active .caret {
+    transform: rotate(90deg); /* Rotate the caret when active */
+}
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact1.html">Contact Us</a></li>
+            <li><a href="about1.html">About Us</a></li>
+            
+            <li class="collapsible-menu">
+                <a href="#" class="menu-button">
+                    Services
+                     <span class="caret">▼</span>
+                </a>
+                <ul class="dropdown">
+               <li><a href="10th.html#after-10th">After 10th Education</a></li> 
+               <li><a href="12th.html#after-12th">After 12th Education</a></li> 
+               <li><a href="mbbs.html#after-12th">MBBS</a></li> 
+               <li><a href="business.html">Business</a></li>
+               <li><a href="Engg.html#after-engineering">Engineering</a></li> 
+               <li><a href="pdf/Engg_Cutoff.pdf">Engineering Cutoff</a></li> 
+                </ul>
+            </li>
+            <a href="Login/index.html">Sign Up</a>
+            <a href="Login/login.html">Login</a>
+            <a href="Admin/index.html">Dashboard</a>
+            <a href="Questio_Answer/display_questions.php">Ask </a>
+        </ul>
+    </nav>
+    </div>
+
+   
+
+    <!-- Contact Content Section -->
+    <section class="contact-content">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST">
+
+                    <!-- Public access key Using web3forms for receiving message  -->
+                <input type="hidden" name="access_key" value="dd068c02-eb66-4bf0-8056-43531619cb94">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Our Office</h3>
+                    <p>SSPI , Parbhani</p>
+                </div>
+                <div class="contact-card">
+                    <div class="icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>+91 9529348085</p>
+                    <p>+91 9730839874</p>
+                </div>
+                <div class="contact-card">
+                    <div class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>chanduj765@gmail.com</p>
+                    <p>vbulbule205@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5944.618869527856!2d76.7782242373551!3d19.257603662095036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd018330c8c0533%3A0x39335e8f95082dae!2sShri%20Shivaji%20College%2C%20Parbhani!5e0!3m2!1sen!2sin!4v1742548483301!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Future Consultant All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add JavaScript for animations -->
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

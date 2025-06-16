@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Consultant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        
+        <h1>Future Consultant</h1>
+
+        <!-- Modal for Course Information -->
+        <div id="courseModal" class="modal hidden">
+           
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <div id="course-info">
+                    <!-- Course information will be injected here -->
+                </div>
+                <button onclick="continueToColleges()">Continue</button>
+            </div>
+        </div>
+
+        <!-- Step 1: Select Education Level -->
+        <div id="education-section" class="card">
+            <h2>Select Your Education Level</h2>
+            <div class="home-page">
+                <button><a href="../index.html">Go Home</a></button>
+            </div>
+            <button onclick="showSubjects()">10th Passed</button>
+            <button onclick="showFields('12th')">12th Passed</button>
+        </div>
+
+        <!-- Step 2A: Select Subject (For 10th Passed) -->
+        <div id="subject-section" class="card hidden">
+            <button class="back-btn" onclick="showEducationLevel()">← Back</button>
+            <h2>Select Your Favorite Subject</h2>
+            <div id="subject-container"></div>
+        </div>
+
+        <!-- Step 2B: Select Field (For 12th Passed or After Subject Selection) -->
+        <div id="fields-section" class="card hidden">
+            <button class="back-btn" onclick="goBack('fields')">← Back</button>
+            <h2>Suggested Fields</h2>
+            <div id="fields-container"></div>
+        </div>
+
+        <!-- Step 3: Select Course -->
+        <div id="courses-section" class="card hidden">
+            <button class="back-btn" onclick="goBack('courses')">← Back</button>
+            <h2>Courses Under Selected Field</h2>
+            <div id="courses-container"></div>
+        </div>
+
+        <!-- Step 4: College Cutoff Table -->
+        <div id="colleges-section" class="card hidden">
+            <button class="back-btn" onclick="goBack('colleges')">← Back</button>
+            <h2>Colleges & Cutoffs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>College Name</th>
+                        <th>Open</th>
+                        <th>OBC</th>
+                        <th>SC</th>
+                        <th>ST</th>
+                    </tr>
+                </thead>
+                <tbody id="colleges-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

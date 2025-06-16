@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('back.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+.back{
+    color:rgb(219, 30, 30);
+    background-color: #66ff00;
+    margin-left: 100px;
+}
+
+.home-page{
+    position: absolute;
+    text-decoration: none;
+    top: 10px;
+    left: 10px;
+    text-align: center;
+    background: rgb(218, 255, 255);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.home-page a{
+    color: white;
+    text-decoration: none;
+}
+.home-page:hover{
+    background: #0056b3;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.container h1 {
+    color: #ddd;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: rgb(218, 255, 255);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.card button {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#subject-container,
+#fields-container,
+#courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.subject-card,
+.field-card,
+.course-card {
+    background: #d6faff;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    width: 45%;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.subject-card:hover,
+.field-card:hover,
+.course-card:hover {
+    background: #94dcf6;
+}
+
+
+/* Table Styling */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+
+/* Back Button Styling */
+
+.back-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px;
+    color: #000000;
+}
+
+.back-btn:hover {
+    color: #eaeeef;
+}
+
+
+/* Modal Container */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background: #fff;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    font-size: 17px;
+    border-radius: 8px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Close Button */
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
+
+
+/* Hide by default */
+
+.hidden {
+    display: none;
+}
+
+
+/* Style the Continue Button */
+
+.modal-content button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.modal-content button:hover {
+    background: #0056b3;
+}

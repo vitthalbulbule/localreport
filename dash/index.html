@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Consultant Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <style>.sidebar .nav li a:hover {
+        color: #4CAF50;
+    }
+     .sidebar {
+            width: 250px;
+            background: linear-gradient(45deg, #ff6b6b, #f06595, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf, #20c997, #51cf66, #94d82d, #fcc419, #ff922b);
+    background-size: 300% 300%;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+        }
+    </style>
+    
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <h2>Future Consultant</h2>
+            </div>
+            <ul class="nav">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="add_consultant.html"><i class="fas fa-user-plus"></i> Add Consultant</a></li>
+                <li><a href="manage_students1.php"><i class="fas fa-users"></i> Manage Students</a></li>
+                <li><a href="appointments.php"><i class="fas fa-trophy"></i> Appoitments</a></li>
+                <li><a href="../index.html"><i class="fas fa-cog"></i> Go Home</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header>
+                <h1>Welcome to Future Consultant</h1>
+                
+                <div class="user-profile">
+                    <img src="images/user.png" alt="User">
+                    <span>Admin</span>
+                </div>
+            </header>
+
+            <!-- Cards Section -->
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Add Consultant</h3>
+                    <p>Add new consultants and their details.</p>
+                    <a href="add_consultant.html" class="btn">Go</a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Manage Students</h3>
+                    <p>Link students to consultants for guidance.</p>
+                    <a href="manage_students1.php" class="btn">Go</a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Appointments</h3>
+                    <p>View consultant achievements and awards.</p>
+                    <a href="appointments.php" class="btn">Go</a>
+                </div>
+            </div>
+
+            <!-- Recent Activity Section -->
+            <div class="recent-activity">
+                <h2>Steps Followed By Admin</h2>
+                <ul>
+                    <li>Add new consultant With actual Data</li>
+                    <li>Modify Or Add student</li>
+                    <li>Check Appoitments (Upcoming OR Completed)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

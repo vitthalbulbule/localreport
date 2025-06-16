@@ -1,0 +1,209 @@
+/* Add these styles to your existing styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 20px;
+    max-width: 1000px; /* Increased width */
+    width: 90%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.main-content {
+    flex: 3; /* Takes 3 parts of the available space */
+}
+
+.sidebar {
+    flex: 1; /* Takes 1 part of the available space */
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.question-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.question-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question-card h3 {
+    color: #007bff;
+    margin: 0;
+}
+
+.answer-container {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #e9f5ff, #d1e9ff);
+    border-left: 5px solid #007bff;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.answer-container h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.answer-container p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Add these styles to your existing styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 20px;
+    max-width: 1000px; /* Increased width */
+    width: 90%;
+    height: 80vh; /* Set a fixed height for the container */
+    overflow: hidden; /* Hide overflow for the container */
+}
+
+.main-content {
+    flex: 3; /* Takes 3 parts of the available space */
+    overflow-y: auto; /* Enable vertical scrollbar for main content if needed */
+    padding-right: 10px; /* Add some padding to avoid overlap with scrollbar */
+}
+
+.sidebar {
+    flex: 1; /* Takes 1 part of the available space */
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    overflow-y: auto; /* Enable vertical scrollbar for sidebar */
+    max-height: 100%; /* Ensure sidebar doesn't exceed container height */
+}
+
+.question-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.question-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.question-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question-card h3 {
+    color: #007bff;
+    margin: 0;
+}
+
+.answer-container {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #e9f5ff, #d1e9ff);
+    border-left: 5px solid #007bff;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.answer-container h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.answer-container p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
